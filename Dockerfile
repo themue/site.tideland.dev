@@ -1,6 +1,28 @@
-FROM nginx:alpine
+# -----
+# Dockerfile for a container mirroring and
+# providing GitHub repositories.
+# -----
 
-ADD content /usr/share/nginx/html/
+FROM alpine:latest
+LABEL maintainer = "Frank Mueller <mail@themue.dev>"
 
-expose 80
-expose 443
+RUN apk add --no-cache ca-certificates
+RUN apk add --no-cache git
+RUN apk add --no-cache nginx
+
+RUN mkdir -p /run/nginx
+
+COPY default.conf /etc/nginx/conf.d/
+
+COPY start.sh .
+COPY pull.sh .
+
+EXPOSE 80
+EXPOSE 443
+
+ENTRYPOINT ["/bin/sh", "/start.sh"]
+
+# -----
+# EOF
+# -----
+
