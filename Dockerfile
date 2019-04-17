@@ -10,11 +10,13 @@ RUN apk add --no-cache ca-certificates
 RUN apk add --no-cache openssh
 RUN apk add --no-cache git
 RUN apk add --no-cache nginx
+RUN apk add --no-cache nginx-mod-http-echo
 
 RUN mkdir -p /run/nginx
+RUN mkdir -p /tideland/repos
 
 COPY default.conf /etc/nginx/conf.d/
-COPY index.html /var/www/localhost/htdocs/
+COPY index.html /tideland/
 COPY start.sh .
 COPY pull.sh .
 

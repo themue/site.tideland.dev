@@ -1,7 +1,7 @@
 #!/bin/sh
 HOST="https://github.com/tideland"
 REPOSITORIES="go.git"
-DESTINATION="/var/www/localhost/htdocs"
+DESTINATION="/tideland/repos"
 
 GIT=git
 GIT_CLONE_ARGS="clone --mirror"
@@ -12,7 +12,7 @@ for REPOSITORY in ${REPOSITORIES}
 do
 	cd ${DESTINATION}
 
-	if [[ ! -d ${REPOSITORY}/ ]]	
+	if [[ ! -d ${REPOSITORY}/ ]]
 	then
 		${GIT} ${GIT_CLONE_ARGS} ${HOST}/${REPOSITORY}
 	fi
