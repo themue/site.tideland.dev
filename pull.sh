@@ -1,5 +1,5 @@
 #!/bin/sh
-HOST="git@github.com:tideland"
+HOST="https://github.com/tideland"
 REPOSITORIES="go.git"
 DESTINATION="/var/www/localhost/htdocs"
 
