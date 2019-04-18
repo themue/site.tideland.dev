@@ -13,7 +13,7 @@ RUN apk add --no-cache nginx
 RUN apk add --no-cache nginx-mod-http-echo
 
 RUN mkdir -p /run/nginx
-RUN mkdir -p /tideland/repos
+RUN mkdir -p /tideland
 
 COPY default.conf /etc/nginx/conf.d/
 COPY index.html /tideland/

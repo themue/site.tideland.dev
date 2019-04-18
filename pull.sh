@@ -1,7 +1,7 @@
 #!/bin/sh
 HOST="https://github.com/tideland"
 REPOSITORIES="go.git"
-DESTINATION="/tideland/repos"
+DESTINATION="/tideland"
 
 GIT=git
 GIT_CLONE_ARGS="clone --mirror"
