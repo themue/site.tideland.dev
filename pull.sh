@@ -1,6 +1,6 @@
 #!/bin/sh
 HOST="https://github.com/tideland"
-REPOSITORIES="go.git"
+REPOSITORIES="go-actor.git go-audit.git go-cells.git go-jwt.git go-slices.git go-uuid.git go-wait.go"
 DESTINATION="/tideland"
 
 GIT=git
