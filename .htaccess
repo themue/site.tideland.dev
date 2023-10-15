@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteRule ^/go/(.*)$ https://pkg.go.dev/tideland.dev/go/$1 [R=301,L]
+</IfModule>
+
+# Handle 404 errors
+ErrorDocument 404 /index.html
